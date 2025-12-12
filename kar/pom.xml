@@ -58,6 +58,9 @@
         <configuration>
           <archive>
             <addMavenDescriptor>false</addMavenDescriptor>
+            <manifest>
+              <addDefaultEntries>false</addDefaultEntries>
+            </manifest>
           </archive>
           <!-- <startLevel>80</startLevel> -->
           <aggregateFeatures>true</aggregateFeatures>
