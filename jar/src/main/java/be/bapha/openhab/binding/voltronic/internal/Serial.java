@@ -1,4 +1,4 @@
-package org.openhab.binding.voltronic.internal;
+package be.bapha.openhab.binding.voltronic.internal;
 
 import java.io.Closeable;
 import java.io.IOException;

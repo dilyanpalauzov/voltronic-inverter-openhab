@@ -1,4 +1,4 @@
-package org.openhab.binding.voltronic.internal;
+package be.bapha.openhab.binding.voltronic.internal;
 
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;

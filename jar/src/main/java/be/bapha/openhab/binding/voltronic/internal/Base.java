@@ -1,4 +1,4 @@
-package org.openhab.binding.voltronic.internal;
+package be.bapha.openhab.binding.voltronic.internal;
 
 import java.util.ArrayList;
 import java.util.Collection;

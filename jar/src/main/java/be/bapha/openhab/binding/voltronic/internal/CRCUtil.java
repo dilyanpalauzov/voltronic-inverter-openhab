@@ -1,4 +1,4 @@
-package org.openhab.binding.voltronic.internal;
+package be.bapha.openhab.binding.voltronic.internal;
 
 // adapted from https://github.com/synogen/mpp/blob/master/src/main/java/org/mppsolartest/serial/CRCUtil.java
 import org.eclipse.jdt.annotation.NonNullByDefault;

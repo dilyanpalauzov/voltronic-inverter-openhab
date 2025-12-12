@@ -4,13 +4,13 @@
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>org.openhab.binding.voltronic-parent</artifactId>
-    <groupId>oh-voltronic</groupId>
+    <artifactId>be.bapha.openhab.binding.voltronic-parent</artifactId>
+    <groupId>be.bapha.openhab.addons.bundles</groupId>
     <version>4.3.0</version>
   </parent>
 
-  <artifactId>org.openhab.binding.voltronic</artifactId>
-  <groupId>org.openhab.addons.bundles</groupId>
+  <artifactId>be.bapha.openhab.binding.voltronic</artifactId>
+  <groupId>openhab-binding-voltronic</groupId>
   <packaging>kar</packaging>
   <version>4.3.0</version>
 
@@ -38,8 +38,8 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.openhab.addons.bundles</groupId>
-      <artifactId>org.openhab.binding.voltronic-bundle</artifactId>
+      <groupId>be.bapha.openhab.addons.bundles</groupId>
+      <artifactId>be.bapha.openhab.binding.voltronic-bundle</artifactId>
       <version>${ohc.version}</version>
     </dependency>
   </dependencies>

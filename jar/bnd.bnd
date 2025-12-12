@@ -1,5 +1,5 @@
-Bundle-SymbolicName: org.openhab.binding.voltronic
-Automatic-Module-Name: org.openhab.binding.voltronic
+Bundle-SymbolicName: be.bapha.openhab.binding.voltronic
+Automatic-Module-Name: be.bapha.openhab.binding.voltronic
 Import-Package: \\
   org.openhab.core.automation.annotation.*;resolution:=optional;version=!,\\
   org.openhab.*;version=!,\\
