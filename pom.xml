@@ -4,7 +4,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>org.openhab.binding.voltronic</artifactId>
+  <artifactId>org.openhab.binding.voltronic-parent</artifactId>
   <groupId>oh-voltronic</groupId>
   <packaging>pom</packaging>
   <version>4.3.0</version>
