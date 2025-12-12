@@ -56,6 +56,9 @@
         <version>${karaf.version}</version>
         <extensions>true</extensions>
         <configuration>
+          <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive>
           <!-- <startLevel>80</startLevel> -->
           <aggregateFeatures>true</aggregateFeatures>
           <checkDependencyChange>true</checkDependencyChange>
