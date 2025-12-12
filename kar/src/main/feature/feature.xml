@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<features name="org.openhab.binding.voltronic-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
-	<repository>mvn:org.openhab.core.features.karaf/org.openhab.core.features.karaf.openhab-core/${ohc.version}/xml/features</repository>
-	<feature name="marketplace-openhab-binding-voltronic" description="voltronic Binding" version="${project.version}">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="org.openhab.binding.voltronic-${project.version}">
+	<feature name="org.openhab.binding.voltronic" description="voltronic Binding" version="${project.version}">
 		<feature>openhab-runtime-base</feature>
 		<feature>openhab-transport-serial</feature>
 		<bundle start-level="80">mvn:org.openhab.addons.bundles/org.openhab.binding.voltronic-bundle/${project.version}</bundle>
