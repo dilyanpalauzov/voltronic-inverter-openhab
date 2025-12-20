@@ -291,7 +291,7 @@
 			<tag>Setpoint</tag>
 			<tag>Mode</tag>
 		</tags>
-		<state readOnly="true">
+		<state>
 			<options>
 				<option value="0">AGM</option>
 				<option value="1">Flooded</option>

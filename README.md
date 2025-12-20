@@ -37,7 +37,7 @@ Sometimes on supported commands the inverter returns NAK.  When this binding rec
 In fact no openHAB thing can be created for these.
 * All battery equalization stuff
 * Detecting which commands the inverter supports and in turn convert some channels from read-only to read-write.
-Currently the only changes via channels are made by the PD/PE, PCP00, PCP01, POP00, POP01, PSPB0, PSPB1, PRG00 and PRG01 commands, as only these are supported by the inverter of the author of this binding.
+Currently the only changes via channels are made by the PD/PE, PBT00, PBT01, PBT02, PCP00, PCP01, POP00, POP01, PRG00, PRG01, PSPB0 and PSPB1 commands, as only these are supported by the inverter, owned by the author of this binding.
 However, as can be seen at the end of the current file, there is an action to send arbitrary commands to the inverter.
 * Discovery of devices
 
@@ -72,7 +72,7 @@ The provided channels are grouped, based on the command which provides data for 
 
 ### Autoupdate is disabled
 
-The current binding has disabled generating a predicted state, when a command changing a setting (PE, PD, PRG, POP, PSPB and PCP) is sent to the inverter over a channel.
+The current binding has disabled generating a predicted state, when a command changing a setting (PE, PD, PBT, PCP, POP, PRG and PSPB) is sent to the inverter over a channel.
 After sending the command, the binding queues the current state with the QFLAG and QPIRI commands and updates the channels with the new state.
 If the inverter rejects (ignores, vetoes) the command, the initial state of the item does not change.
 [BasicUI](https://github.com/openhab/openhab-webui/issues/3456) and [openHAB-Android with sitemaps](https://github.com/openhab/openhab-android/issues/3947) in such case show the state, which the user modified to, not the state, returned by the inverter.
@@ -130,7 +130,7 @@ Read-only means that the value may or may not be modifiable on the device or by 
 | qpiri#batteryUnderVoltage       | Number:ElectricPotential | R | Menu item 29             |
 | qpiri#batteryBulkVoltage        | Number:ElectricPotential | R | Menu item 26             |
 | qpiri#batteryFloatVoltage       | Number:ElectricPotential | R | Menu item 27             |
-| qpiri#batteryType               | String                   | R | Menu item 05             |
+| qpiri#batteryType               | String                   | W | Menu item 05             |
 | qpiri#maxACChargingCurrent      | Number:ElectricCurrent   | R | Menu item 11             |
 | qpiri#maxChargingCurrent        | Number:ElectricCurrent   | R | Menu item 02             |
 | qpiri#inputVoltageRange         | Switch                   | W | Menu item 03             |
@@ -216,7 +216,7 @@ Number:ElectricPotential BatteryRechargeVoltage (gBattery1) [Setpoint, Voltage] 
 Number:ElectricPotential BatteryUnderVoltage (gBattery1) [Setpoint, Voltage] { channel="voltronic:inverter:f:qpiri#batteryUnderVoltage" }
 Number:ElectricPotential BatteryBulkVoltage (gBattery1) [Setpoint, Voltage] { channel="voltronic:inverter:f:qpiri#batteryBulkVoltage" }
 Number:ElectricPotential BatteryFloatVoltage (gBattery1) [Setpoint, Voltage] { channel="voltronic:inverter:f:qpiri#batteryFloatVoltage" }
-String BatteryType <none> (gBattery1) [Setpoint, Mode] { channel="voltronic:inverter:f:qpiri#batteryType" }
+String BatteryType <none> (gBattery1) [Setpoint, Mode] { channel="voltronic:inverter:f:qpiri#batteryType", autoupdate="true" }
 Number:ElectricCurrent MaxACChargingCurrent (gInverter1) [Setpoint, Current] { channel="voltronic:inverter:f:qpiri#maxACChargingCurrent" }
 Number:ElectricCurrent MaxChargingCurrent (gInverter1) [Setpoint, Current] { channel="voltronic:inverter:f:qpiri#maxChargingCurrent" }
 Switch InputVoltageRange <none> (gInverter1) ["Switch", Mode] { channel="voltronic:inverter:f:qpiri#inputVoltageRange", autoupdate="true" }
@@ -287,7 +287,7 @@ sitemap i1 label="i1" {
     Text item=BatteryUnderVoltage
     Text item=BatteryBulkVoltage
     Text item=BatteryFloatVoltage
-    Text item=BatteryType
+    Selection item=BatteryType
     Text item=MaxACChargingCurrent
     Text item=MaxChargingCurrent
     Selection item=InputVoltageRange

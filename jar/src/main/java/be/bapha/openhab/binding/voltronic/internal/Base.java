@@ -223,6 +223,13 @@ abstract class Base extends BaseThingHandler implements Runnable {
                             } else
                                 logger.error("Channel qpiri#pvPowerBalance handles only ON and OFF");
                             return;
+                        case "batteryType":
+                            if (command instanceof StringType s) {
+                                sendCommand("PBT0" + s.toString());
+                                handleQPIRIandQFLAG();
+                            } else
+                                logger.error("Channel qpiri#batteryType handles only StringType");
+                            return;
                         default:
                             logger.error("Channel {} does not handle commands", channelUID.getId());
                             return;
