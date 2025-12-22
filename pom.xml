@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
   <version>4.3.0</version>
 
-  <name>openHAB Add-ons :: Bundles :: voltronic Binding</name>
+  <name>openHAB Add-ons :: Bundles :: Voltronic Inverter Binding</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
