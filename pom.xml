@@ -17,7 +17,6 @@
     <ohc.version>4.3.0</ohc.version>
     <sat.version>0.17.0</sat.version>
     <spotless.eclipse.wtp.version>4.21.0</spotless.eclipse.wtp.version>
-    <karaf.version>4.4.8</karaf.version>
   </properties>
 
   <build>
@@ -186,6 +185,5 @@
   </repositories>
   <modules>
     <module>jar</module>
-    <module>kar</module>
   </modules>
 </project>
