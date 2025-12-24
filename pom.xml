@@ -39,6 +39,12 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>openhab-release</id>
+      <url>https://openhab.jfrog.io/artifactory/libs-release</url>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
@@ -89,7 +95,7 @@
       <plugin>
         <groupId>org.openhab.core.tools</groupId>
         <artifactId>i18n-maven-plugin</artifactId>
-        <version>4.3.10-SNAPSHOT</version>
+        <version>${ohc.version}</version>
       </plugin>
       <plugin>
         <groupId>com.diffplug.spotless</groupId>
@@ -239,13 +245,6 @@
       </snapshots>
       <id>openhab-release</id>
       <url>https://openhab.jfrog.io/artifactory/libs-release</url>
-    </repository>
-    <repository>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>openhab-snapshot</id>
-      <url>https://openhab.jfrog.io/artifactory/libs-snapshot</url>
     </repository>
   </repositories>
 </project>
