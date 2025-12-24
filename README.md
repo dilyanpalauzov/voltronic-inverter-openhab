@@ -45,6 +45,14 @@ However, as can be seen at the end of the current file, there is an action to se
 
 For the serial communication to work either under Settings → Add-On Management → USB Suggestion Finder must be enabled, or an add-on from the distribution, which utilizes serial communication, must be installed.
 
+This could be resolved by distributing `.kar` files, but openHAB does not fully utilize `.kar` files.  That said …
+
+### Building the Binding
+
+> mvn package -pl jar
+
+This skips building the `kar` module and the `.kar` file.
+
 ## Policy for accepting patches
 
 Patches, adding new channels or converting a read-only channel to write-channel by sending a command, should first detect if the feature is available by the connected inverter, and not offer it for all inverters.
