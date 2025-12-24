@@ -11,3 +11,4 @@ Import-Package: \\
 -noimportjava: true
 -sources: false
 -contract: *
+-removeheaders: Private-Package
