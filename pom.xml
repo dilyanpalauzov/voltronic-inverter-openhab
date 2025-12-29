@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-
-  <artifactId>be.bapha.openhab.binding.voltronic</artifactId>
   <groupId>be.bapha.openhab.addons.bundles</groupId>
+  <artifactId>be.bapha.openhab.binding.voltronic</artifactId>
   <version>4.3.0</version>
 
   <name>openHAB Add-ons :: Bundles :: Voltronic Inverter Binding</name>
@@ -14,8 +13,9 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <ohc.version>4.3.0</ohc.version>
-    <sat.version>0.17.0</sat.version>
+    <sat.version>0.18.0</sat.version>
     <spotless.eclipse.wtp.version>4.21.0</spotless.eclipse.wtp.version>
+    <spotless.eclipse.version>4.25</spotless.eclipse.version>
   </properties>
   <dependencies>
     <dependency>
@@ -39,6 +39,15 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>openhab-release</id>
+      <url>https://openhab.jfrog.io/artifactory/libs-release</url>
+    </repository>
+  </repositories>
   <pluginRepositories>
     <pluginRepository>
       <id>openhab-release</id>
@@ -100,7 +109,7 @@
       <plugin>
         <groupId>com.diffplug.spotless</groupId>
         <artifactId>spotless-maven-plugin</artifactId>
-        <version>2.43.0</version>
+        <version>2.44.3</version>
         <configuration>
           <java>
             <eclipse>
@@ -113,20 +122,25 @@
             </importOrder>
             <endWithNewline/>
           </java>
+          <pom>
+            <sortPom>
+              <expandEmptyElements>false</expandEmptyElements>
+              <indentAttribute>schemaLocation</indentAttribute>
+              <predefinedSortOrder>recommended_2008_06</predefinedSortOrder>
+              <sortDependencyExclusions/>
+              <sortDependencyManagement/>
+            </sortPom>
+          </pom>
           <formats>
             <format>
               <!-- *.xml -->
               <includes>
                 <include>src/**/*.xml</include>
+                <include>schema/**/*.xsd</include>
               </includes>
               <excludes>
-                <exclude>**/pom.xml</exclude>
                 <exclude>**/feature.xml</exclude>
-                <exclude>src/main/history/**/*.xml</exclude>
-                <exclude>src/main/resources/header.xml</exclude>
-                <exclude>src/main/resources/footer.xml</exclude>
-                <exclude>src/main/resources/input/rss*.xml</exclude>
-                <exclude>src/test/resources/**/*.xml</exclude>
+                <exclude>**/pom.xml</exclude>
               </excludes>
               <eclipseWtp>
                 <type>XML</type>
@@ -141,27 +155,12 @@
             <format>
               <!-- feature.xml -->
               <includes>
-                <include>src/main/feature/feature.xml</include>
+                <include>**/src/main/feature/feature.xml</include>
               </includes>
               <eclipseWtp>
                 <type>XML</type>
                 <files>
                   <file>openhab_wst_feature_file.prefs</file>
-                </files>
-                <version>${spotless.eclipse.wtp.version}</version>
-              </eclipseWtp>
-              <trimTrailingWhitespace/>
-              <endWithNewline/>
-            </format>
-            <format>
-              <!-- pom.xml -->
-              <includes>
-                <include>pom.xml</include>
-              </includes>
-              <eclipseWtp>
-                <type>XML</type>
-                <files>
-                  <file>openhab_wst_pom_file.prefs</file>
                 </files>
                 <version>${spotless.eclipse.wtp.version}</version>
               </eclipseWtp>
@@ -237,14 +236,4 @@
       </extension>
     </extensions>
   </build>
-
-  <repositories>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>openhab-release</id>
-      <url>https://openhab.jfrog.io/artifactory/libs-release</url>
-    </repository>
-  </repositories>
 </project>
