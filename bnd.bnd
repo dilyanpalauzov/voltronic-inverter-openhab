@@ -1,12 +1,12 @@
 Bundle-SymbolicName: be.bapha.openhab.binding.voltronic
 Automatic-Module-Name: be.bapha.openhab.binding.voltronic
-Import-Package: \\
-  org.openhab.core.automation.annotation.*;resolution:=optional;version=!,\\
-  org.openhab.*;version=!,\\
-  gnu.io;version="[5.2.1,6)",\\
+Import-Package: \
+  org.openhab.core.automation.annotation.*;resolution:=optional;version=!,\
+  org.openhab.*;version=!,\
+  gnu.io;version="[5.2.1,6)",\
   *
--exportcontents: \\
-  !*.internal.*,\\
+-exportcontents: \
+  !*.internal.*,\
   !*.impl.*
 -noimportjava: true
 -sources: false
