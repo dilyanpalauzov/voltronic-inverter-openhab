@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.NoSuchElementException;
@@ -478,6 +479,7 @@ abstract class Base extends BaseThingHandler implements Runnable {
             @SuppressWarnings("resource")
             Scanner s = new Scanner(r);
             s.useDelimiter(" ");
+            s.useLocale(Locale.US);
             updateState("qpigs#gridVoltage", new QuantityType<>(s.nextFloat(), Units.VOLT));
             updateState("qpigs#gridFrequency", new QuantityType<>(s.nextFloat(), Units.HERTZ));
             updateState("qpigs#outputVoltage", new QuantityType<>(s.nextFloat(), Units.VOLT));
@@ -546,6 +548,7 @@ abstract class Base extends BaseThingHandler implements Runnable {
             @SuppressWarnings("resource")
             Scanner s = new Scanner(r);
             s.useDelimiter(" ");
+            s.useLocale(Locale.US);
             updateState("qpiri#gridRatingVoltage", new QuantityType<>(s.nextFloat(), Units.VOLT));
             updateState("qpiri#gridRatingCurrent", new QuantityType<>(s.nextFloat(), Units.AMPERE));
             updateState("qpiri#outputRatingVoltage", new QuantityType<>(s.nextFloat(), Units.VOLT));
