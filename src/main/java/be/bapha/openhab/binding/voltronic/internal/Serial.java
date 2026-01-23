@@ -169,20 +169,8 @@ class Serial extends Base implements Closeable {
                  * } catch (IOException e) { }
                  */
             } catch (IOException e) {
-                switch (e.getMessage()) {
-                    case "Broken pipe in writeArray":
-                        logger.error("{} - Broken pipe {}", new String(command, 0, command.length - 3), port);
-                        return null; // concurrent access to port
-                    case "Connection timed out in writeArray":
-                        logger.error("{} on sending invalid command", new String(command, 0, command.length - 3));
-                        return null; // on sending QPIWIS
-                    case "No such device in writeArray":
-                        logger.error("{} unplugged cable (write)", new String(command, 0, command.length - 3));
-                        return null; // on unplugged cable
-                    default:
-                        logger.error("{} produces exception: ", new String(command, 0, command.length - 3), e);
-                        return null;
-                }
+                logger.error("{} produces exception: {}", new String(command, 0, command.length - 3), e.getMessage());
+                return null;
             }
             var sb = new StringBuilder();
             byte[] b = new byte[8];
