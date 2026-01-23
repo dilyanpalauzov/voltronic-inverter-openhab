@@ -96,6 +96,7 @@ Read-only means that the value may or may not be modifiable on the device or by 
 | qpigs#gridVoltage               | Number:ElectricPotential | R |                          |
 | qpigs#gridFrequency             | Number:Frequency         | R |                          |
 | qpigs#outputVoltage             | Number:ElectricPotential | R |                          |
+| qpigs#outputFrequency           | Number:Frequency         | R |                          |
 | qpigs#outputApparentPower       | Number:Power             | R | unit="VA"                |
 | qpigs#outputActivePower         | Number:Power             | R |                          |
 | qpigs#outputLoad                | Number:Dimensionless     | R | unit="%"                 |
