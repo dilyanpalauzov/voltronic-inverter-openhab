@@ -1,6 +1,6 @@
 # Voltronic Inverters Binding
 
-This binding reads data using USB cable with the PI30 protocol from Voltronic inverters, marketed as Axpert, Effekta, MPP Solar, No name, Voltacom and injects the information in openHAB channels.
+This binding reads data using USB cable with the PI30 protocol from Voltronic inverters, marketed as Axpert, Effekta, Kodak, MPP Solar, No name, Voltacom and injects the information in openHAB channels.
 It provides an action to send any command to the devices from openHAB.
 
 ## Communication over /dev/hidraw devices
