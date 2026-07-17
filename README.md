@@ -77,8 +77,8 @@ The provided channels are grouped, based on the command which provides data for 
 The current binding has disabled generating a predicted state, when a command changing a setting (PE, PD, PBT, PCP, POP, PRG and PSPB) is sent to the inverter over a channel.
 After sending the command, the binding queues the current state with the QFLAG and QPIRI commands and updates the channels with the new state.
 If the inverter rejects (ignores, vetoes) the command, the initial state of the item does not change.
-[BasicUI](https://github.com/openhab/openhab-webui/issues/3456) and [openHAB-Android with sitemaps](https://github.com/openhab/openhab-android/issues/3947) in such case show the state, which the user modified to, not the state, returned by the inverter.
-Having `autoupdate="true"` below is necessary when using BasicUI or openHAB-Android with sitemaps, so that the item changes to the new state and then returns to the old one, when the inverter might reject the command.
+[BasicUI](https://github.com/openhab/openhab-webui/issues/3456) in such case shows the state, which the user modified to, not the state, returned by the inverter.
+Having `autoupdate="true"` below is necessary when using BasicUI with sitemaps, so that the item changes to the new state and then returns to the old one, when the inverter might reject the command.
 Enabling Power Saving (PEj) is an example for a command, which inverters may ignore.
 
 ### The Channels
