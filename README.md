@@ -47,6 +47,8 @@ For the serial communication to work either under Settings → Add-On Management
 
 This could be resolved by distributing `.kar` files, but openHAB does not fully utilize `.kar` files.
 
+The only known problem at runtime is that sometimes the input (PV) watts are read from the inverter, and sometimes are calculated by multiplying the input amperes with the input volts leading to different number compared to the display.  This is bug in this software.  A work-around is to unplug and plug the connecting cable.
+
 ## Policy for accepting patches
 
 Patches, adding new channels or converting a read-only channel to write-channel by sending a command, should first detect if the feature is available by the connected inverter, and not offer it for all inverters.
